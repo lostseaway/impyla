@@ -232,6 +232,9 @@ class ImpalaDialect(DefaultDialect):
         if table_name in tables:
             return True
         return False
+      
+    def get_view_names(self, connection, schema=None, **kw):
+        return []
 
     def get_table_names(self, connection, schema=None, **kw):
         query = 'SHOW TABLES'
